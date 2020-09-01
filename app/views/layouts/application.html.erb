@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWikinimous</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Wikinimous" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,19 +10,22 @@
   </head>
 
   <body>
-    <div class="header">
-      <div class="btn btn-light"><%= link_to "Wikinimous", articles_path %></div>
-      <div class="btn btn-light"><%= link_to "New Article", new_article_path %></div>
-    </div>
-    <div class="main-container">
+    <!-- <div class="header">
+      <div class="btn btn-light"><%#= link_to "Wikinimous", articles_path %></div>
+      <div class="btn btn-light"><%#= link_to "New Article", new_article_path %></div>
+    </div> -->
+
+     <%= render 'navbar' %>
+    <!-- <div class="main-container"> -->
 
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
+            <%= render "flash" %>
             <%= yield %>
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </body>
 </html>

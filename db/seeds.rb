@@ -11,8 +11,8 @@ Article.destroy_all
 puts 'Creating 10 fake articles...'
 10.times do
   Article.create(
-    title: Faker::TvShows::GameOfThrones.character,
-    content: Faker::TvShows::GameOfThrones.quote
+    title: Faker::Sports::Football.player,
+    content: Faker::Sports::Football.team
   )
 end
 puts "Created: #{Article.count} article(s)"
