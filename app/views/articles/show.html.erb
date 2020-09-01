@@ -1,0 +1,19 @@
+<div class="article-container">
+  <div class="article-menu">
+    <h1><%= @article.title %></h1>
+  <span>
+    <%= link_to edit_article_path do %>
+    <%= icon('fas', 'pencil-alt') %>
+    <% end %>
+  </span>
+  <span>
+    <%= link_to article_path(@article), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <%= icon('far', 'trash-alt') %>
+    <% end %>
+  </span>
+  </div>
+  <hr>
+  <p><%= @article.content %></p>
+  <hr>
+
+</div>
